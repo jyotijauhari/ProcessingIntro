@@ -4,6 +4,8 @@ public class TryProcessing extends PApplet{
     public static final int HEIGHT = 488;
     public static final int DIAMETER = 100;
 
+    int x=0;
+
 
     public static void main(String[] args) {
         PApplet.main("TryProcessing",args );
@@ -38,12 +40,16 @@ public class TryProcessing extends PApplet{
         // then drawing
         // then bg getting white and ur drawing getting erased
         // then drawing again
-        paintWhite(); //white bg
-        drawCircle(); // creating circle continoulsy from mouse location on x axis, on y axis and can move anywhere in plane
+//        paintWhite();
+        drawCircle();
     }
 
     private void drawCircle() {
-        ellipse(mouseX,mouseY, DIAMETER, DIAMETER);
+        ellipse(x,HEIGHT/2, DIAMETER, DIAMETER); //start moving circles from 0 on x and middle of screen(y) and move to end of box
+        x++;
+
+        //ellipse(x, mouseY, DIAMETER, DIAMETER); //move on y with respect to mouse and forward in x
+        //x++
     }
 
     private void paintWhite() {
